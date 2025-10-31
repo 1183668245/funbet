@@ -759,8 +759,31 @@ body {
         display: none;
     }
     
-    .social-link span {
+    .social-link {
         display: none;
+    }
+    
+    .publish-btn {
+        font-size: 0.8rem;
+        padding: var(--space-xs) var(--space-sm);
+    }
+    
+    .publish-btn i {
+        margin-right: var(--space-xs);
+    }
+    
+    .wallet-btn {
+        font-size: 0.8rem;
+        padding: var(--space-xs) var(--space-sm);
+        min-width: auto;
+    }
+    
+    .nav-brand span {
+        font-size: 1.2rem;
+    }
+    
+    .nav-right {
+        gap: var(--space-sm);
     }
 }
 
@@ -1503,6 +1526,10 @@ body {
 @media (max-width: 480px) {
     .navbar-content {
         padding: 0 var(--space-sm);
+    }
+    
+    .nav-right {
+        gap: var(--space-xs);
     }
     
     .hero-section {
