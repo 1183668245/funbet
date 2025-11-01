@@ -167,12 +167,12 @@ function initAnimations() {
         let statusClass = 'ended';
         
          
-        const currentLanguage = localStorage.getItem('language') || 'zh';
+        const currentLanguage = localStorage.getItem('language') || 'en';
         const translations = getTranslations();
         const currentTranslations = translations[currentLanguage];
         
         const gameImage = gameImages[game.name] || `https://via.placeholder.com/400x300/${game.color.substring(1)}/ffffff?text=${encodeURIComponent(game.name)}`;
-        const categoryText = gameCategories[game.name] ? gameCategories[game.name][currentLanguage] : (currentTranslations['game-category-default'] || '预测');
+        const categoryText = gameCategories[game.name] ? gameCategories[game.name][currentLanguage] : (currentTranslations['game-category-default'] || 'Prediction');
         
         return `
             <div class="game-card" onclick="openGameDetail('${game.name}', ${index})">
@@ -180,14 +180,14 @@ function initAnimations() {
                     <img src="${gameImage}" alt="${game.name}" loading="lazy">
                     <div class="game-overlay">
                         <div class="game-status">
-                            <span class="status-badge ${statusClass}">${currentTranslations['game-status-ended'] || '已结束'}</span>
+                            <span class="status-badge ${statusClass}">${currentTranslations['game-status-ended'] || 'Ended'}</span>
                             <span class="participants-count">
                                 <i class="fas fa-users"></i>
                                 ${participants}
                             </span>
                         </div>
                         <div class="game-prize">
-                            <span class="prize-label">${currentTranslations['game-prize-pool'] || '总奖池'}</span>
+                            <span class="prize-label">${currentTranslations['game-prize-pool'] || 'Prize Pool'}</span>
                             <span class="prize-amount">${prizePool} FUNBET</span>
                         </div>
                     </div>
@@ -199,7 +199,7 @@ function initAnimations() {
                         <span class="game-category">${categoryText}</span>
                         <span class="game-time">
                             <i class="fas fa-clock"></i>
-                            ${currentTranslations['game-status-ended'] || '已结束'}
+                            ${currentTranslations['game-status-ended'] || 'Ended'}
                         </span>
                     </div>
                 </div>
@@ -324,8 +324,8 @@ function initAnimations() {
 
  
 function generateGameDescription(gameName) {
-     
-    const currentLanguage = localStorage.getItem('language') || 'zh';
+  
+    const currentLanguage = localStorage.getItem('language') || 'en';
     
     const descriptions = {
         'BLISTERINO': {
@@ -379,10 +379,10 @@ function showWarningModal(titleKey = 'warning-title', messageKey = 'warning-mess
     const translations = getTranslations();
     
      
-    const title = translations[currentLanguage][titleKey] || translations['en'][titleKey] || '温馨提示';
-    const message = translations[currentLanguage][messageKey] || translations['en'][messageKey] || '内盘阶段暂时无法参与';
-    const description = translations[currentLanguage][descKey] || translations['en'][descKey] || '当前竞猜处于内盘阶段，暂时无法接受投注。';
-    const confirmText = translations[currentLanguage]['warning-confirm'] || translations['en']['warning-confirm'] || '我知道了';
+    const title = translations[currentLanguage][titleKey] || translations['en'][titleKey] || 'Notice';
+    const message = translations[currentLanguage][messageKey] || translations['en'][messageKey] || 'Currently unavailable during internal phase';
+    const description = translations[currentLanguage][descKey] || translations['en'][descKey] || 'The current betting is in the internal phase and cannot accept bets temporarily.';
+    const confirmText = translations[currentLanguage]['warning-confirm'] || translations['en']['warning-confirm'] || 'Got it';
     
      
     const titleElement = warningModal.querySelector('.warning-header h3');
@@ -579,7 +579,7 @@ function initWalletConnection() {
                 const translations = getTranslations();
                 walletTextSpan.textContent = translations[currentLanguage]['connect-wallet'];
             } else {
-                walletBtn.textContent = translations[currentLanguage]['connect-wallet'] || '连接钱包';
+                walletBtn.textContent = translations[currentLanguage]['connect-wallet'] || 'Connect Wallet';
             }
             walletBtn.classList.remove('connected');
         }
@@ -1203,23 +1203,23 @@ function calculateTimeRemaining(endTime) {
     const end = new Date(endTime);
     const diff = end - now;
     
-    const currentLanguage = localStorage.getItem('language') || 'zh';
-    const currentTranslations = getTranslations()[currentLanguage] || getTranslations()['zh'];
+    const currentLanguage = localStorage.getItem('language') || 'en';
+    const currentTranslations = getTranslations()[currentLanguage] || getTranslations()['en'];
     
     if (diff <= 0) {
-        return currentTranslations['game-status-ended'] || '已结束';
+        return currentTranslations['game-status-ended'] || 'Ended';
     }
     
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     
     if (days > 0) {
-        return `${days}${currentTranslations['time-unit-day'] || '天'} ${hours}${currentTranslations['time-unit-hour'] || '小时'}`;
+        return `${days}${currentTranslations['time-unit-day'] || 'd'} ${hours}${currentTranslations['time-unit-hour'] || 'h'}`;
     } else if (hours > 0) {
-        return `${hours}${currentTranslations['time-unit-hour'] || '小时'}`;
+        return `${hours}${currentTranslations['time-unit-hour'] || 'h'}`;
     } else {
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        return `${minutes}${currentTranslations['time-unit-minute'] || '分钟'}`;
+        return `${minutes}${currentTranslations['time-unit-minute'] || 'm'}`;
     }
 }
 
