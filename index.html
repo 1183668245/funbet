@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="FUNBET - 基于BSC的去中心化预测平台，体验体育、加密货币、电竞等多元化预测游戏">
-    <meta name="keywords" content="预测平台,BSC,DeFi,区块链,体育预测,加密货币,电竞">
+    <meta name="description" content="FUNBET - 基于BSC的去中心化预测平台，体验体育、加密货币、电竞等多元化预测游戏" id="meta-description">
+    <meta name="keywords" content="预测平台,BSC,DeFi,区块链,体育预测,加密货币,电竞" id="meta-keywords">
     <meta name="author" content="FUNBET Team">
     
-    <!-- Open Graph / Facebook -->
+     
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://funbet.io/">
-    <meta property="og:title" content="FunBet - 趣味预测平台">
-    <meta property="og:description" content="基于BSC的去中心化预测平台，更快更省钱的预测体验">
+    <meta property="og:title" content="FunBet - 趣味预测平台" id="og-title">
+    <meta property="og:description" content="基于BSC的去中心化预测平台，更快更省钱的预测体验" id="og-description">
     <meta property="og:image" content="funbet.png">
     
-    <!-- Twitter -->
+     
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://funbet.io/">
-    <meta property="twitter:title" content="FunBet - 趣味预测平台">
-    <meta property="twitter:description" content="基于BSC的去中心化预测平台，更快更省钱的预测体验">
+    <meta property="twitter:title" content="FunBet - 趣味预测平台" id="twitter-title">
+    <meta property="twitter:description" content="基于BSC的去中心化预测平台，更快更省钱的预测体验" id="twitter-description">
     <meta property="twitter:image" content="funbet.png">
     
-    <title>FunBet - 基于BSC的去中心化预测平台</title>
+    <title id="page-title">FunBet - 基于BSC的去中心化预测平台</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     
-    <!-- 预加载关键资源 -->
+     
     <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
     <link rel="preconnect" href="https://images.unsplash.com">
@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- 导航栏 -->
+     
     <nav class="navbar">
         <div class="navbar-content">
             <div class="nav-left">
@@ -45,9 +45,9 @@
                     <span>FunBet</span>
                 </a>
                 <ul class="nav-links">
-                    <li><a href="#" class="nav-link active">预测市场</a></li>
-                    <li><a href="#" class="nav-link" id="leaderboard-link">排行榜</a></li>
-                    <li><a href="#" class="nav-link" id="my-predictions-link">我的预测</a></li>
+                    <li><a href="#" class="nav-link active" data-lang="prediction-market">Prediction Market</a></li>
+                    <li><a href="#" class="nav-link" id="leaderboard-link" data-lang="leaderboard">Leaderboard</a></li>
+                    <li><a href="#" class="nav-link" id="my-predictions-link" data-lang="my-predictions">My Predictions</a></li>
                 </ul>
             </div>
             <div class="nav-right">
@@ -62,80 +62,84 @@
                 <button class="theme-toggle" title="切换主题">
                     <i class="fas fa-moon"></i>
                 </button>
+                <button class="language-toggle" title="Language / 语言">
+                    <i class="fas fa-globe"></i>
+                    <span class="lang-text">中文</span>
+                </button>
                 <button class="publish-btn">
                     <i class="fas fa-plus"></i>
-                    发布预测
+                    <span data-lang="publish">Publish Prediction</span>
                 </button>
                 <button class="wallet-btn">
                     <i class="fas fa-wallet"></i>
-                    连接钱包
+                    <span class="wallet-text" data-lang="connect-wallet">Connect Wallet</span>
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero区域 -->
+     
     <section class="hero-section">
         <div class="hero-content">
             <div class="hero-main">
-                <p class="hero-subtitle">智能预测平台</p>
-                <h1 class="hero-title">FunBet<br>万物皆可预测</h1>
-                <p class="hero-description">
-                    基于区块链的去中心化预测平台，参与全球热点事件竞猜，体验透明公正的彩池+佣金模式 
+                <p class="hero-subtitle" data-lang="hero-subtitle">Smart Prediction Platform</p>
+                <h1 class="hero-title" data-lang="hero-title">FunBet<br>Predict Everything</h1>
+                <p class="hero-description" data-lang="hero-description">
+                    Blockchain-based decentralized prediction platform, participate in global hot events betting, experience transparent and fair pool + commission model
                 </p>
                 <div class="hero-actions">
                     <button class="hero-btn-primary">
                         <i class="fas fa-rocket"></i>
-                        开始预测
+                        <span data-lang="start-prediction">Start Prediction</span>
                     </button>
                     <button class="hero-btn-secondary wallet-btn" id="chat-room-btn">
                         <i class="fas fa-comments"></i>
-                        聊天室
+                        <span data-lang="chat-room">Chat Room</span>
                     </button>
                 </div>
             </div>
         </div>
         
-        <!-- 搜索栏 -->
+         
         <div class="search-container">
             <div class="search-box">
                 <i class="fas fa-search"></i>
-                <input type="text" placeholder="搜索预测市场...">
+                <input type="text" data-lang-placeholder="search-placeholder" placeholder="Search prediction markets...">
             </div>
         </div>
 
-        <!-- 分类导航 -->
+         
         <div class="category-nav">
-            <button class="category-btn active" data-category="all">全部</button>
-            <button class="category-btn" data-category="sports">体育类</button>
-            <button class="category-btn" data-category="finance">金融与区块链</button>
-            <button class="category-btn" data-category="gaming">游戏与电竞类</button>
-            <button class="category-btn" data-category="social">社交热点类</button>
-            <button class="category-btn" data-category="entertainment">随机娱乐类</button>
-            <button class="category-btn" data-category="knowledge">知识与预测类</button>
-            <button class="category-btn" data-category="other">其他</button>
+            <button class="category-btn active" data-category="all" data-lang="category-all">All</button>
+            <button class="category-btn" data-category="sports" data-lang="category-sports">Sports</button>
+            <button class="category-btn" data-category="finance" data-lang="category-finance">Finance & Blockchain</button>
+            <button class="category-btn" data-category="gaming" data-lang="category-gaming">Gaming & Esports</button>
+            <button class="category-btn" data-category="social" data-lang="category-social">Social Trends</button>
+            <button class="category-btn" data-category="entertainment" data-lang="category-entertainment">Random Entertainment</button>
+            <button class="category-btn" data-category="knowledge" data-lang="category-knowledge">Knowledge & Prediction</button>
+            <button class="category-btn" data-category="other" data-lang="category-other">Other</button>
         </div>
     </section>
 
-    <!-- 第二区域 - Banner轮播 -->
+     
     <section class="banner-section">
         <div class="banner-container">
             <div class="banner-slide active">
                 <div class="banner-content">
-                    <h3>🎯 社交娱乐中心</h3>
-                    <p>FunBet不只是一个DApp。它是一个社交娱乐中心。</p>
+                    <h3 data-lang="banner-title-1">🎯 Social Entertainment Center</h3>
+                    <p data-lang="banner-desc-1">FunBet is not just a DApp. It's a social entertainment center.</p>
                 </div>
             </div>
             <div class="banner-slide">
                 <div class="banner-content">
-                    <h3>💎 预测您所知所爱</h3>
-                    <p>预测您所知所爱： 体育、加密货币、电竞、流行文化！</p>
+                    <h3 data-lang="banner-title-2">💎 预测您所知所爱</h3>
+                    <p data-lang="banner-desc-2">预测您所知所爱： 体育、加密货币、电竞、流行文化！</p>
                 </div>
             </div>
             <div class="banner-slide">
                 <div class="banner-content">
-                    <h3>🚀 更快更省钱</h3>
-                    <p>厌倦高费用？FunBet基于BSC，预测更快更省钱。</p>
+                    <h3 data-lang="banner-title-3">🚀 更快更省钱</h3>
+                    <p data-lang="banner-desc-3">厌倦高费用？FunBet基于BSC，预测更快更省钱。</p>
                 </div>
             </div>
         </div>
@@ -146,64 +150,64 @@
         </div>
     </section>
 
-    <!-- 第三区域 - 核心展示区 -->
+     
     <section class="games-section">
         <div class="section-header">
             <div>
-                <h2 class="section-title">🎮 热门预测</h2>
-                <p class="section-subtitle">发现最新最热门的预测，参与其中赢取丰厚奖励</p>
+                <h2 class="section-title" data-lang="hot-predictions-title">🎮 热门预测</h2>
+                <p class="section-subtitle" data-lang="hot-predictions-subtitle">发现最新最热门的预测，参与其中赢取丰厚奖励</p>
             </div>
-            <button class="view-all-btn">
+            <button class="view-all-btn" data-lang="view-all-btn">
                 查看全部
                 <i class="fas fa-arrow-right"></i>
             </button>
         </div>
         
         <div class="games-grid" id="gamesGrid">
-            <!-- 游戏卡片将通过JavaScript动态生成 -->
+             
         </div>
 
-        <!-- 分页控件 -->
+         
         <div class="pagination">
             <button class="pagination-btn" id="prevBtn" disabled>
                 <i class="fas fa-chevron-left"></i>
-                上一页
+                <span data-lang="prev-page">上一页</span>
             </button>
             <div class="pagination-info">
                 <span id="currentPage">1</span> / <span id="totalPages">1</span>
             </div>
             <button class="pagination-btn" id="nextBtn">
-                下一页
+                <span data-lang="next-page">下一页</span>
                 <i class="fas fa-chevron-right"></i>
             </button>
         </div>
     </section>
 
-    <!-- 底部版权区域 -->
+     
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2025 Funbet 版权所有</p>
+            <p data-lang="copyright-text">&copy; 2025 Funbet 版权所有</p>
         </div>
     </footer>
 
-    <!-- 发布预测弹窗 -->
+     
     <div id="publishModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>发布预测</h2>
+                <h2 data-lang="publish-prediction-title">Publish Prediction</h2>
                 <span class="close-btn">&times;</span>
             </div>
             <div class="modal-body">
                 <form id="publishForm">
                     <div class="form-group">
-                        <label for="predictionImage">上传图片</label>
+                        <label for="predictionImage" data-lang="upload-image-label">Upload Image</label>
                         <div class="image-upload-container">
                             <input type="file" id="predictionImage" name="predictionImage" accept=".jpg,.jpeg,.png,.gif,.webp" style="display: none;">
                             <div class="image-upload-area" id="imageUploadArea">
                                 <div class="upload-placeholder">
                                     <i class="fas fa-cloud-upload-alt"></i>
-                                    <p>点击上传图片</p>
-                                    <span class="upload-hint">支持 JPG、PNG 等格式，比例1:1，不超过100KB</span>
+                                    <p data-lang="click-upload-image">Click to upload image</p>
+                                    <span class="upload-hint" data-lang="upload-image-hint">Support JPG, PNG formats, 1:1 ratio, max 100KB</span>
                                 </div>
                                 <div class="image-preview" id="imagePreview" style="display: none;">
                                     <img id="previewImg" src="" alt="预览图片">
@@ -214,59 +218,59 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="predictionTitle">竞猜标题</label>
-                        <input type="text" id="predictionTitle" name="predictionTitle" placeholder="例如：BNB是否在明晚12点突破1200美金？" required>
+                        <label for="predictionTitle" data-lang="prediction-title-label">Prediction Title</label>
+                        <input type="text" id="predictionTitle" name="predictionTitle" data-lang-placeholder="prediction-title-placeholder" placeholder="e.g.: Will BNB break $1200 by tomorrow 12 PM?" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="predictionOptions">选项设置</label>
+                        <label for="predictionOptions" data-lang="options-setting-label">Options Setting</label>
                         <div class="options-container">
-                            <input type="text" class="option-input" placeholder="选项1：是" required>
-                            <input type="text" class="option-input" placeholder="选项2：否" required>
+                            <input type="text" class="option-input" data-lang-placeholder="option-1-placeholder" placeholder="Option 1: Yes" required>
+                            <input type="text" class="option-input" data-lang-placeholder="option-2-placeholder" placeholder="Option 2: No" required>
                         </div>
-                        <button type="button" class="add-option-btn">+ 添加选项</button>
+                        <button type="button" class="add-option-btn" data-lang="add-option-btn">+ Add Option</button>
                     </div>
                     
                     <div class="form-group">
-                        <label for="endTime">截止时间</label>
+                        <label for="endTime" data-lang="end-time-label">End Time</label>
                         <input type="datetime-local" id="endTime" name="endTime" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="commissionRate">佣金率 (%)</label>
-                        <input type="number" id="commissionRate" name="commissionRate" min="0" max="5" step="0.1" placeholder="0-5%" required>
+                        <label for="commissionRate" data-lang="commission-rate-label">Commission Rate (%)</label>
+                        <input type="number" id="commissionRate" name="commissionRate" min="0" max="5" step="0.1" data-lang-placeholder="commission-rate-placeholder" placeholder="0-5%" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="predictionType">预测类型</label>
+                        <label for="predictionType" data-lang="prediction-type-label">Prediction Type</label>
                         <select id="predictionType" name="predictionType" required>
-                            <option value="">请选择</option>
-                            <option value="objective">客观事件</option>
-                            <option value="subjective">主观事件</option>
+                            <option value="" data-lang="please-select">Please select</option>
+                            <option value="objective" data-lang="objective-event">Objective Event</option>
+                            <option value="subjective" data-lang="subjective-event">Subjective Event</option>
                         </select>
                     </div>
                     
                     <div class="form-group">
-                        <label for="verificationMethod">事件验证方式</label>
+                        <label for="verificationMethod" data-lang="verification-method-label">Event Verification Method</label>
                         <select id="verificationMethod" name="verificationMethod" required>
-                            <option value="">请选择</option>
-                            <option value="auto">自动验证</option>
-                            <option value="manual">投票验证</option>
+                            <option value="" data-lang="please-select">Please select</option>
+                            <option value="auto" data-lang="auto-verification">Auto Verification</option>
+                            <option value="manual" data-lang="vote-verification">Vote Verification</option>
                         </select>
                     </div>
                     
                     <div class="form-group">
-                        <label for="deposit">保证金 (可选)</label>
-                        <input type="number" id="deposit" name="deposit" placeholder="用于激励庄家诚信">
+                        <label for="deposit" data-lang="deposit-label">Deposit (Optional)</label>
+                        <input type="number" id="deposit" name="deposit" data-lang-placeholder="deposit-placeholder" placeholder="To incentivize honest behavior">
                     </div>
                     
                     <div class="form-actions">
                         <div class="fee-notice">
-                            <span class="fee-text">预测手续费需支付1000代币</span>
+                            <span class="fee-text" data-lang="prediction-fee-notice">Prediction fee requires 1000 tokens</span>
                         </div>
                         <div class="action-buttons">
-                            <button type="button" class="cancel-btn">取消</button>
-                            <button type="submit" class="submit-btn">发布预测</button>
+                            <button type="button" class="cancel-btn" data-lang="cancel-btn">Cancel</button>
+                            <button type="submit" class="submit-btn" data-lang="publish-prediction-btn">Publish Prediction</button>
                         </div>
                     </div>
                 </form>
@@ -274,92 +278,92 @@
         </div>
     </div>
 
-    <!-- 竞猜详情弹窗 -->
+     
     <div class="modal" id="detailModal">
         <div class="modal-overlay"></div>
         <div class="modal-content detail-modal-content">
             <div class="modal-header">
-                <h3>竞猜详情</h3>
+                <h3 data-lang="prediction-details-title">Prediction Details</h3>
                 <button class="close-btn" id="closeDetailBtn">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="detail-content">
-                    <!-- 竞猜基本信息 -->
+                     
                     <div class="detail-section">
                         <div class="detail-image">
-                            <img id="detailImage" src="" alt="竞猜图片">
+                            <img id="detailImage" src="" data-lang-alt="prediction-image-alt" alt="竞猜图片">
                         </div>
                         <div class="detail-info">
                             <h2 id="detailTitle">竞猜标题</h2>
                             <div class="detail-meta">
                                 <div class="meta-item">
-                                    <span class="meta-label">创建者:</span>
+                                    <span class="meta-label" data-lang="creator-label">Creator:</span>
                                     <span id="detailCreator">0x1234...5678</span>
                                 </div>
                                 <div class="meta-item">
-                                    <span class="meta-label">截止时间:</span>
+                                    <span class="meta-label" data-lang="end-time-label">End Time:</span>
                                     <span id="detailEndTime">2024-01-15 18:00</span>
                                 </div>
                                 <div class="meta-item">
-                                    <span class="meta-label">佣金率:</span>
+                                    <span class="meta-label" data-lang="commission-rate-label">Commission Rate:</span>
                                     <span id="detailCommission">2.5%</span>
                                 </div>
                                 <div class="meta-item">
-                                    <span class="meta-label">总奖池:</span>
+                                    <span class="meta-label" data-lang="total-prize-pool-label">Total Prize Pool:</span>
                                     <span id="detailPrizePool">12,500 代币</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 竞猜选项 -->
+                     
                     <div class="detail-section">
-                        <h3>参与竞猜</h3>
+                        <h3 data-lang="participate-prediction-title">Participate in Prediction</h3>
                         <div class="betting-options" id="bettingOptions">
-                            <!-- 选项将通过JavaScript动态生成 -->
+                             
                         </div>
                     </div>
 
-                    <!-- 投注区域 -->
+                     
                     <div class="detail-section">
-                        <h3>我的投注</h3>
+                        <h3 data-lang="my-bet-title">My Bet</h3>
                         <div class="betting-form">
                             <div class="selected-option">
-                                <span>选择的选项: </span>
-                                <span id="selectedOption">请先选择一个选项</span>
+                                <span data-lang="selected-option-label">Selected Option: </span>
+                                <span id="selectedOption" data-lang="please-select-option">Please select an option first</span>
                             </div>
                             <div class="bet-amount">
-                                <label for="betAmount">投注金额:</label>
-                                <input type="number" id="betAmount" placeholder="输入投注金额" min="1">
-                                <span class="currency">代币</span>
+                                <label for="betAmount" data-lang="bet-amount-label">Bet Amount:</label>
+                                <input type="number" id="betAmount" data-lang-placeholder="bet-amount-placeholder" placeholder="Enter bet amount" min="1">
+                                <span class="currency" data-lang="tokens">Tokens</span>
                             </div>
                             <div class="expected-return">
-                                <span>预期收益: </span>
-                                <span id="expectedReturn">0 代币</span>
+                                <span data-lang="expected-return-label">Expected Return: </span>
+                                <span id="expectedReturn">0 <span data-lang="tokens">Tokens</span></span>
                             </div>
-                            <button class="bet-btn" id="placeBetBtn" disabled>确认投注</button>
+                            <button class="bet-btn" id="placeBetBtn" disabled data-lang="confirm-bet-btn">Confirm Bet</button>
                         </div>
                     </div>
 
-                    <!-- 统计信息 -->
+                     
                     <div class="detail-section">
-                        <h3>竞猜统计</h3>
+                        <h3 data-lang="prediction-stats-title">Prediction Statistics</h3>
                         <div class="stats-grid">
                             <div class="stat-item">
                                 <div class="stat-value" id="totalParticipants">156</div>
-                                <div class="stat-label">参与人数</div>
+                                <div class="stat-label" data-lang="participants-count-label">Participants</div>
                             </div>
                             <div class="stat-item">
                                 <div class="stat-value" id="totalBets">2,340</div>
-                                <div class="stat-label">总投注次数</div>
+                                <div class="stat-label" data-lang="total-bets-label">Total Bets</div>
                             </div>
                             <div class="stat-item">
                                 <div class="stat-value" id="averageBet">53.4</div>
-                                <div class="stat-label">平均投注额</div>
+                                <div class="stat-label" data-lang="average-bet-label">Average Bet</div>
                             </div>
                             <div class="stat-item">
                                 <div class="stat-value" id="timeRemaining">2天 5小时</div>
-                                <div class="stat-label">剩余时间</div>
+                                <div class="stat-label" data-lang="time-remaining-label">Time Remaining</div>
                             </div>
                         </div>
                     </div>
@@ -368,32 +372,32 @@
         </div>
     </div>
 
-    <!-- 内盘阶段提示弹窗 -->
+     
     <div class="modal" id="warningModal">
         <div class="modal-content warning-modal">
             <div class="warning-header">
-                <h3>温馨提示</h3>
+                <h3 data-lang="warning-title">Notice</h3>
             </div>
             <div class="warning-body">
-                <p>内盘阶段暂时无法参与</p>
-                <p class="warning-desc">当前竞猜处于内盘阶段，暂时无法接受投注。</p>
+                <p data-lang="warning-message">Currently unavailable during internal phase</p>
+                <p class="warning-desc" data-lang="warning-desc">The current betting is in the internal phase and cannot accept bets temporarily.</p>
             </div>
             <div class="warning-footer">
-                <button class="warning-btn" id="warningConfirmBtn">我知道了</button>
+                <button class="warning-btn" id="warningConfirmBtn" data-lang="warning-confirm">Got it</button>
             </div>
         </div>
     </div>
 
-    <!-- 聊天室模态框 -->
+     
     <div class="chat-modal-overlay" id="chatModalOverlay" style="display: none;">
         <div class="chat-modal" id="chatModal" style="display: none;">
             <div class="chat-header">
                 <div class="chat-title">
                     <i class="fas fa-comments"></i>
-                    <span>FUNBET 聊天室</span>
+                    <span data-lang="chat-room-title">FUNBET Chat Room</span>
                     <div class="online-count">
                         <i class="fas fa-circle online-indicator"></i>
-                        <span id="onlineCount">127</span> 在线
+                        <span id="onlineCount">127</span> <span data-lang="online">Online</span>
                     </div>
                 </div>
                 <button class="close-btn" id="closeChatBtn">
@@ -402,53 +406,53 @@
             </div>
             
             <div class="chat-body">
-                <!-- 加载状态 -->
+                 
                 <div class="chat-loading" id="chatLoading">
                     <div class="loading-spinner"></div>
-                    <p>正在连接聊天室...</p>
+                    <p data-lang="chat-connecting">正在连接聊天室...</p>
                 </div>
                 
-                <!-- 聊天内容 -->
+                 
                 <div class="chat-content" id="chatContent" style="display: none;">
-                    <!-- 侧边栏 -->
+                     
                     <div class="chat-sidebar">
                         <div class="sidebar-tabs">
                             <button class="tab-btn active" data-tab="userPanel">
                                 <i class="fas fa-users"></i>
-                                <span>用户</span>
+                                <span data-lang="chat-users-tab">Users</span>
                             </button>
                             <button class="tab-btn" data-tab="roomPanel">
                                 <i class="fas fa-comments"></i>
-                                <span>频道</span>
+                                <span data-lang="chat-channels-tab">Channels</span>
                             </button>
                         </div>
                         
                         <div class="tab-content">
                             <div class="tab-panel active" id="userPanel">
                                 <div class="user-list" id="userList">
-                                    <!-- 用户列表将通过JavaScript动态生成 -->
+                                     
                                 </div>
                             </div>
                             <div class="tab-panel" id="roomPanel">
                                 <div class="room-list">
                                     <div class="room-item active">
                                         <i class="fas fa-hashtag"></i>
-                                        <span>大厅</span>
+                                        <span data-lang="chat-room-lobby">Lobby</span>
                                         <span class="room-count">127</span>
                                     </div>
                                     <div class="room-item">
                                         <i class="fas fa-football-ball"></i>
-                                        <span>足球预测</span>
+                                        <span data-lang="chat-room-football">Football Prediction</span>
                                         <span class="room-count">45</span>
                                     </div>
                                     <div class="room-item">
                                         <i class="fas fa-basketball-ball"></i>
-                                        <span>篮球预测</span>
+                                        <span data-lang="chat-room-basketball">Basketball Prediction</span>
                                         <span class="room-count">32</span>
                                     </div>
                                     <div class="room-item">
                                         <i class="fas fa-chart-line"></i>
-                                        <span>股市预测</span>
+                                        <span data-lang="chat-room-stock">Stock Prediction</span>
                                         <span class="room-count">28</span>
                                     </div>
                                 </div>
@@ -456,10 +460,10 @@
                         </div>
                     </div>
                     
-                    <!-- 主聊天区域 -->
+                     
                     <div class="chat-main">
                         <div class="chat-messages" id="chatMessages">
-                            <!-- 消息将通过JavaScript动态生成 -->
+                             
                         </div>
                         
                         <div class="chat-input-area">
@@ -479,7 +483,7 @@
                             </div>
                             
                             <div class="input-container">
-                                <input type="text" id="chatInput" placeholder="输入消息...按回车发送">
+                                <input type="text" id="chatInput" data-lang-placeholder="chat-input-placeholder" placeholder="Type a message... Press Enter to send">
                                 <button class="send-btn" id="sendBtn">
                                     <i class="fas fa-paper-plane"></i>
                                 </button>
